@@ -10,12 +10,17 @@
 		8A48D3652830EC46009F746F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A48D3642830EC46009F746F /* AppDelegate.swift */; };
 		8A48D3672830EC46009F746F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A48D3662830EC46009F746F /* SceneDelegate.swift */; };
 		8A48D3692830EC46009F746F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A48D3682830EC46009F746F /* ViewController.swift */; };
-		8A48D36C2830EC46009F746F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8A48D36A2830EC46009F746F /* Main.storyboard */; };
 		8A48D36E2830EC49009F746F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8A48D36D2830EC49009F746F /* Assets.xcassets */; };
 		8A48D3712830EC49009F746F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8A48D36F2830EC49009F746F /* LaunchScreen.storyboard */; };
 		8A48D37C2830EC49009F746F /* WaasduTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A48D37B2830EC49009F746F /* WaasduTests.swift */; };
 		8A48D3862830EC49009F746F /* WaasduUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A48D3852830EC49009F746F /* WaasduUITests.swift */; };
 		8A48D3882830EC49009F746F /* WaasduUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A48D3872830EC49009F746F /* WaasduUITestsLaunchTests.swift */; };
+		8A48D39B2830ECAC009F746F /* CoordinatePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A48D3952830ECAC009F746F /* CoordinatePresenter.swift */; };
+		8A48D39C2830ECAC009F746F /* CoordinateWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A48D3962830ECAC009F746F /* CoordinateWorker.swift */; };
+		8A48D39D2830ECAC009F746F /* CoordinateRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A48D3972830ECAC009F746F /* CoordinateRouter.swift */; };
+		8A48D39E2830ECAC009F746F /* CoordinateModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A48D3982830ECAC009F746F /* CoordinateModels.swift */; };
+		8A48D39F2830ECAC009F746F /* CoordinateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A48D3992830ECAC009F746F /* CoordinateViewController.swift */; };
+		8A48D3A02830ECAC009F746F /* CoordinateInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A48D39A2830ECAC009F746F /* CoordinateInteractor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,7 +45,6 @@
 		8A48D3642830EC46009F746F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8A48D3662830EC46009F746F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		8A48D3682830EC46009F746F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		8A48D36B2830EC46009F746F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		8A48D36D2830EC49009F746F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8A48D3702830EC49009F746F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8A48D3722830EC49009F746F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -49,6 +53,12 @@
 		8A48D3812830EC49009F746F /* WaasduUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WaasduUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8A48D3852830EC49009F746F /* WaasduUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaasduUITests.swift; sourceTree = "<group>"; };
 		8A48D3872830EC49009F746F /* WaasduUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaasduUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		8A48D3952830ECAC009F746F /* CoordinatePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatePresenter.swift; sourceTree = "<group>"; };
+		8A48D3962830ECAC009F746F /* CoordinateWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinateWorker.swift; sourceTree = "<group>"; };
+		8A48D3972830ECAC009F746F /* CoordinateRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinateRouter.swift; sourceTree = "<group>"; };
+		8A48D3982830ECAC009F746F /* CoordinateModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinateModels.swift; sourceTree = "<group>"; };
+		8A48D3992830ECAC009F746F /* CoordinateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinateViewController.swift; sourceTree = "<group>"; };
+		8A48D39A2830ECAC009F746F /* CoordinateInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinateInteractor.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,10 +109,10 @@
 		8A48D3632830EC46009F746F /* Waasdu */ = {
 			isa = PBXGroup;
 			children = (
+				8A48D3942830EC8F009F746F /* Scene */,
 				8A48D3642830EC46009F746F /* AppDelegate.swift */,
 				8A48D3662830EC46009F746F /* SceneDelegate.swift */,
 				8A48D3682830EC46009F746F /* ViewController.swift */,
-				8A48D36A2830EC46009F746F /* Main.storyboard */,
 				8A48D36D2830EC49009F746F /* Assets.xcassets */,
 				8A48D36F2830EC49009F746F /* LaunchScreen.storyboard */,
 				8A48D3722830EC49009F746F /* Info.plist */,
@@ -125,6 +135,19 @@
 				8A48D3872830EC49009F746F /* WaasduUITestsLaunchTests.swift */,
 			);
 			path = WaasduUITests;
+			sourceTree = "<group>";
+		};
+		8A48D3942830EC8F009F746F /* Scene */ = {
+			isa = PBXGroup;
+			children = (
+				8A48D3952830ECAC009F746F /* CoordinatePresenter.swift */,
+				8A48D3962830ECAC009F746F /* CoordinateWorker.swift */,
+				8A48D3972830ECAC009F746F /* CoordinateRouter.swift */,
+				8A48D3982830ECAC009F746F /* CoordinateModels.swift */,
+				8A48D3992830ECAC009F746F /* CoordinateViewController.swift */,
+				8A48D39A2830ECAC009F746F /* CoordinateInteractor.swift */,
+			);
+			path = Scene;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -233,7 +256,6 @@
 			files = (
 				8A48D3712830EC49009F746F /* LaunchScreen.storyboard in Resources */,
 				8A48D36E2830EC49009F746F /* Assets.xcassets in Resources */,
-				8A48D36C2830EC46009F746F /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -258,9 +280,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8A48D39F2830ECAC009F746F /* CoordinateViewController.swift in Sources */,
+				8A48D39D2830ECAC009F746F /* CoordinateRouter.swift in Sources */,
+				8A48D39B2830ECAC009F746F /* CoordinatePresenter.swift in Sources */,
 				8A48D3692830EC46009F746F /* ViewController.swift in Sources */,
 				8A48D3652830EC46009F746F /* AppDelegate.swift in Sources */,
+				8A48D3A02830ECAC009F746F /* CoordinateInteractor.swift in Sources */,
+				8A48D39C2830ECAC009F746F /* CoordinateWorker.swift in Sources */,
 				8A48D3672830EC46009F746F /* SceneDelegate.swift in Sources */,
+				8A48D39E2830ECAC009F746F /* CoordinateModels.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -297,14 +325,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		8A48D36A2830EC46009F746F /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				8A48D36B2830EC46009F746F /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		8A48D36F2830EC49009F746F /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -435,6 +455,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 4A5GSXMSS8;
@@ -442,9 +463,9 @@
 				INFOPLIST_FILE = Waasdu/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -452,9 +473,10 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "-.Waasdu";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -463,6 +485,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 4A5GSXMSS8;
@@ -470,9 +493,9 @@
 				INFOPLIST_FILE = Waasdu/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -480,9 +503,10 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "-.Waasdu";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
