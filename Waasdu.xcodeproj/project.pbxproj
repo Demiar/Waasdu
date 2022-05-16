@@ -7,20 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8A3365932831360C00F3955B /* CoordinateModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A3365922831360C00F3955B /* CoordinateModel.swift */; };
+		8A3365952831362000F3955B /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A3365942831362000F3955B /* NetworkManager.swift */; };
 		8A48D3652830EC46009F746F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A48D3642830EC46009F746F /* AppDelegate.swift */; };
 		8A48D3672830EC46009F746F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A48D3662830EC46009F746F /* SceneDelegate.swift */; };
-		8A48D3692830EC46009F746F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A48D3682830EC46009F746F /* ViewController.swift */; };
 		8A48D36E2830EC49009F746F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8A48D36D2830EC49009F746F /* Assets.xcassets */; };
 		8A48D3712830EC49009F746F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8A48D36F2830EC49009F746F /* LaunchScreen.storyboard */; };
-		8A48D37C2830EC49009F746F /* WaasduTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A48D37B2830EC49009F746F /* WaasduTests.swift */; };
 		8A48D3862830EC49009F746F /* WaasduUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A48D3852830EC49009F746F /* WaasduUITests.swift */; };
 		8A48D3882830EC49009F746F /* WaasduUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A48D3872830EC49009F746F /* WaasduUITestsLaunchTests.swift */; };
 		8A48D39B2830ECAC009F746F /* CoordinatePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A48D3952830ECAC009F746F /* CoordinatePresenter.swift */; };
-		8A48D39C2830ECAC009F746F /* CoordinateWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A48D3962830ECAC009F746F /* CoordinateWorker.swift */; };
-		8A48D39D2830ECAC009F746F /* CoordinateRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A48D3972830ECAC009F746F /* CoordinateRouter.swift */; };
 		8A48D39E2830ECAC009F746F /* CoordinateModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A48D3982830ECAC009F746F /* CoordinateModels.swift */; };
 		8A48D39F2830ECAC009F746F /* CoordinateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A48D3992830ECAC009F746F /* CoordinateViewController.swift */; };
 		8A48D3A02830ECAC009F746F /* CoordinateInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A48D39A2830ECAC009F746F /* CoordinateInteractor.swift */; };
+		8AE95E1C283261530035CCDB /* NetworkManagerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AE95E1B283261530035CCDB /* NetworkManagerTest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,24 +40,24 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		8A3365922831360C00F3955B /* CoordinateModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoordinateModel.swift; sourceTree = "<group>"; };
+		8A3365942831362000F3955B /* NetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		8A48D3612830EC46009F746F /* Waasdu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Waasdu.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8A48D3642830EC46009F746F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8A48D3662830EC46009F746F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		8A48D3682830EC46009F746F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		8A48D36D2830EC49009F746F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8A48D3702830EC49009F746F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8A48D3722830EC49009F746F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8A48D3772830EC49009F746F /* WaasduTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WaasduTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		8A48D37B2830EC49009F746F /* WaasduTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaasduTests.swift; sourceTree = "<group>"; };
 		8A48D3812830EC49009F746F /* WaasduUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WaasduUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8A48D3852830EC49009F746F /* WaasduUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaasduUITests.swift; sourceTree = "<group>"; };
 		8A48D3872830EC49009F746F /* WaasduUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaasduUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		8A48D3952830ECAC009F746F /* CoordinatePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatePresenter.swift; sourceTree = "<group>"; };
-		8A48D3962830ECAC009F746F /* CoordinateWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinateWorker.swift; sourceTree = "<group>"; };
-		8A48D3972830ECAC009F746F /* CoordinateRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinateRouter.swift; sourceTree = "<group>"; };
 		8A48D3982830ECAC009F746F /* CoordinateModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinateModels.swift; sourceTree = "<group>"; };
 		8A48D3992830ECAC009F746F /* CoordinateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinateViewController.swift; sourceTree = "<group>"; };
 		8A48D39A2830ECAC009F746F /* CoordinateInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinateInteractor.swift; sourceTree = "<group>"; };
+		8AE95E19283261530035CCDB /* CoordinateTest.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CoordinateTest.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		8AE95E1B283261530035CCDB /* NetworkManagerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManagerTest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +76,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		8A48D37E2830EC49009F746F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8AE95E16283261530035CCDB /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -102,6 +108,7 @@
 				8A48D3612830EC46009F746F /* Waasdu.app */,
 				8A48D3772830EC49009F746F /* WaasduTests.xctest */,
 				8A48D3812830EC49009F746F /* WaasduUITests.xctest */,
+				8AE95E19283261530035CCDB /* CoordinateTest.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -112,7 +119,8 @@
 				8A48D3942830EC8F009F746F /* Scene */,
 				8A48D3642830EC46009F746F /* AppDelegate.swift */,
 				8A48D3662830EC46009F746F /* SceneDelegate.swift */,
-				8A48D3682830EC46009F746F /* ViewController.swift */,
+				8A3365922831360C00F3955B /* CoordinateModel.swift */,
+				8A3365942831362000F3955B /* NetworkManager.swift */,
 				8A48D36D2830EC49009F746F /* Assets.xcassets */,
 				8A48D36F2830EC49009F746F /* LaunchScreen.storyboard */,
 				8A48D3722830EC49009F746F /* Info.plist */,
@@ -123,7 +131,7 @@
 		8A48D37A2830EC49009F746F /* WaasduTests */ = {
 			isa = PBXGroup;
 			children = (
-				8A48D37B2830EC49009F746F /* WaasduTests.swift */,
+				8AE95E1A283261530035CCDB /* CoordinateTest */,
 			);
 			path = WaasduTests;
 			sourceTree = "<group>";
@@ -141,13 +149,19 @@
 			isa = PBXGroup;
 			children = (
 				8A48D3952830ECAC009F746F /* CoordinatePresenter.swift */,
-				8A48D3962830ECAC009F746F /* CoordinateWorker.swift */,
-				8A48D3972830ECAC009F746F /* CoordinateRouter.swift */,
 				8A48D3982830ECAC009F746F /* CoordinateModels.swift */,
 				8A48D3992830ECAC009F746F /* CoordinateViewController.swift */,
 				8A48D39A2830ECAC009F746F /* CoordinateInteractor.swift */,
 			);
 			path = Scene;
+			sourceTree = "<group>";
+		};
+		8AE95E1A283261530035CCDB /* CoordinateTest */ = {
+			isa = PBXGroup;
+			children = (
+				8AE95E1B283261530035CCDB /* NetworkManagerTest.swift */,
+			);
+			path = CoordinateTest;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -206,6 +220,23 @@
 			productReference = 8A48D3812830EC49009F746F /* WaasduUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
+		8AE95E18283261530035CCDB /* CoordinateTest */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8AE95E1F283261530035CCDB /* Build configuration list for PBXNativeTarget "CoordinateTest" */;
+			buildPhases = (
+				8AE95E15283261530035CCDB /* Sources */,
+				8AE95E16283261530035CCDB /* Frameworks */,
+				8AE95E17283261530035CCDB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CoordinateTest;
+			productName = CoordinateTest;
+			productReference = 8AE95E19283261530035CCDB /* CoordinateTest.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -227,6 +258,9 @@
 						CreatedOnToolsVersion = 13.3.1;
 						TestTargetID = 8A48D3602830EC46009F746F;
 					};
+					8AE95E18283261530035CCDB = {
+						CreatedOnToolsVersion = 13.3.1;
+					};
 				};
 			};
 			buildConfigurationList = 8A48D35C2830EC46009F746F /* Build configuration list for PBXProject "Waasdu" */;
@@ -245,6 +279,7 @@
 				8A48D3602830EC46009F746F /* Waasdu */,
 				8A48D3762830EC49009F746F /* WaasduTests */,
 				8A48D3802830EC49009F746F /* WaasduUITests */,
+				8AE95E18283261530035CCDB /* CoordinateTest */,
 			);
 		};
 /* End PBXProject section */
@@ -273,6 +308,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		8AE95E17283261530035CCDB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -280,13 +322,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8A3365952831362000F3955B /* NetworkManager.swift in Sources */,
 				8A48D39F2830ECAC009F746F /* CoordinateViewController.swift in Sources */,
-				8A48D39D2830ECAC009F746F /* CoordinateRouter.swift in Sources */,
+				8A3365932831360C00F3955B /* CoordinateModel.swift in Sources */,
 				8A48D39B2830ECAC009F746F /* CoordinatePresenter.swift in Sources */,
-				8A48D3692830EC46009F746F /* ViewController.swift in Sources */,
 				8A48D3652830EC46009F746F /* AppDelegate.swift in Sources */,
 				8A48D3A02830ECAC009F746F /* CoordinateInteractor.swift in Sources */,
-				8A48D39C2830ECAC009F746F /* CoordinateWorker.swift in Sources */,
 				8A48D3672830EC46009F746F /* SceneDelegate.swift in Sources */,
 				8A48D39E2830ECAC009F746F /* CoordinateModels.swift in Sources */,
 			);
@@ -296,7 +337,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8A48D37C2830EC49009F746F /* WaasduTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -306,6 +346,14 @@
 			files = (
 				8A48D3862830EC49009F746F /* WaasduUITests.swift in Sources */,
 				8A48D3882830EC49009F746F /* WaasduUITestsLaunchTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8AE95E15283261530035CCDB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8AE95E1C283261530035CCDB /* NetworkManagerTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -586,6 +634,40 @@
 			};
 			name = Release;
 		};
+		8AE95E1D283261530035CCDB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 4A5GSXMSS8;
+				GENERATE_INFOPLIST_FILE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 12.3;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "-.CoordinateTest";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		8AE95E1E283261530035CCDB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 4A5GSXMSS8;
+				GENERATE_INFOPLIST_FILE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 12.3;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "-.CoordinateTest";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -621,6 +703,15 @@
 			buildConfigurations = (
 				8A48D3922830EC49009F746F /* Debug */,
 				8A48D3932830EC49009F746F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8AE95E1F283261530035CCDB /* Build configuration list for PBXNativeTarget "CoordinateTest" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8AE95E1D283261530035CCDB /* Debug */,
+				8AE95E1E283261530035CCDB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

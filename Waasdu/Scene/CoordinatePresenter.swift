@@ -14,29 +14,48 @@ import UIKit
 import MapKit
 
 protocol CoordinatePresentationLogic {
-    func presentSomething(response: Coordinate.Response)
     func presentCircle(response: Coordinate.Response)
+    func presentLines(response: Coordinate.Response.ResponseType.Coordinats)
 }
 
 class CoordinatePresenter: CoordinatePresentationLogic {
     weak var viewController: CoordinateDisplayLogic?
-
-    // MARK: Do something
-
-    func presentSomething(response: Coordinate.Response) {
-//        let viewModel = Coordinate.Something.ViewModel()
-//        viewController?.displaySomething(viewModel: viewModel)
-    }
     
+    // Преобразуем числа в координаты для отображения
     func presentCircle(response: Coordinate.Response) {
         let center = CLLocationCoordinate2D(latitude: response.circleCoordinates[0], longitude: response.circleCoordinates[1])
         let radius = response.circleRadius
-        let viewModel = Coordinate.ViewModel(
-            circle: MKCircle(
+        let viewModel = Coordinate.ViewModel.Element.Circle(
+            params: MKCircle(
                 center: center,
                 radius: radius
             )
         )
         viewController?.displayCircle(viewModel: viewModel)
+    }
+    // Преобразуем числа в координаты для отображения
+    func presentLines(response: Coordinate.Response.ResponseType.Coordinats) {
+        var result: [MKPolyline] = []
+        for res in response.params {
+            let coord = res[0].map {
+                CLLocationCoordinate2D(
+                    latitude: $0[1],
+                    longitude: $0[0])
+            }
+
+            var line = MKPolyline(coordinates: coord, count: coord.count)
+            if line.boundingMapRect.spans180thMeridian{
+                let re = coord.map{
+                    CLLocationCoordinate2D(
+                        latitude: $0.latitude,
+                        longitude: $0.longitude > 180 ? 180 : $0.longitude
+                    )
+                }
+                line = MKPolyline(coordinates: re, count: re.count)
+            }
+            result.append(line)
+        }
+        let viewModel = Coordinate.ViewModel.Element.Lines(params: result)
+        viewController?.displayLines(viewModel: viewModel)
     }
 }

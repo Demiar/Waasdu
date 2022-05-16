@@ -14,13 +14,14 @@ import UIKit
 import MapKit
 
 protocol CoordinateDisplayLogic: AnyObject {
-    func displaySomething(viewModel: Coordinate.ViewModel)
-    func displayCircle(viewModel: Coordinate.ViewModel)
+    func displayCircle(viewModel: Coordinate.ViewModel.Element.Circle)
+    func displayLines(viewModel: Coordinate.ViewModel.Element.Lines)
+    
 }
 
 class CoordinateViewController: UIViewController, CoordinateDisplayLogic {
     var interactor: CoordinateBusinessLogic?
-    var router: (NSObjectProtocol & CoordinateRoutingLogic & CoordinateDataPassing)?
+    var color: UIColor = .red
     let mapView: MKMapView = MKMapView()
 
 
@@ -42,24 +43,10 @@ class CoordinateViewController: UIViewController, CoordinateDisplayLogic {
         let viewController = self
         let interactor = CoordinateInteractor()
         let presenter = CoordinatePresenter()
-        let router = CoordinateRouter()
         viewController.interactor = interactor
-        viewController.router = router
         interactor.presenter = presenter
         presenter.viewController = viewController
-        router.viewController = viewController
-        router.dataStore = interactor
-    }
-
-    // MARK: Routing
-
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let scene = segue.identifier {
-            let selector = NSSelectorFromString("routeTo\(scene)WithSegue:")
-            if let router = router, router.responds(to: selector) {
-                router.perform(selector, with: segue)
-            }
-        }
+        
     }
 
     // MARK: View lifecycle
@@ -68,65 +55,39 @@ class CoordinateViewController: UIViewController, CoordinateDisplayLogic {
         super.viewDidLoad()
         addConstraint()
         mapView.delegate = self
+        getPolyline()
         let gRecognizer = UITapGestureRecognizer(target: self, action: #selector(tapGesture(sender:)))
         mapView.addGestureRecognizer(gRecognizer)
     }
 
-    // MARK: Do something
-
-    //@IBOutlet weak var nameTextField: UITextField!
-    
+    // Отслеживаем нажатие на карту
     @objc func tapGesture(sender: UITapGestureRecognizer) {
         if sender.state == .ended{
             let locationInView = sender.location(in: mapView)
             let coordinats = mapView.convert(locationInView, toCoordinateFrom: mapView)
             drawCircle(coordinats: coordinats)
-//            let clLocation = CLLocation(latitude: coord.latitude, longitude: coord.longitude)
-//            CLGeocoder().reverseGeocodeLocation(clLocation) { [self] result, error in
-//                mapView.removeOverlay(circle)
-//                guard let res = result else { return }
-//                for r in res {
-//                    let radius = r.region?.identifier.components(separatedBy: " radius ")
-//                    print(radius![1])
-//                    let coords = r.region?.identifier.components(separatedBy: "> ")
-//                    let cord2 = coords![0].components(separatedBy: "<")
-//                    let coord3 = cord2[1].components(separatedBy: ",").map {
-//                        Double($0)
-//                    }
-//                    let rad = Double(radius![1])
-//                    let coordinates = CLLocationCoordinate2D(latitude: coord3[0]!, longitude: coord3[1]!)
-//
-//                    guard let r = rad else { return }
-//                    circle = MKCircle(center: coordinates, radius: r)
-//                }
-//                mapView.addOverlay(circle)
-//                if let error = error {
-//                    print(error)
-//                }
-//            }
         }
     }
-    
-    
-
-//    func doSomething() {
-//        let request = Coordinate.Something.Request()
-//        interactor?.doSomething(request: request)
-//    }
-    
+    // Рисуем линию вокруг региона
     func drawCircle(coordinats: CLLocationCoordinate2D) {
         let request = Coordinate.Request.RequestType.GetCircle(coordinats: coordinats)
         interactor?.getRegion(request: request)
     }
-
-    func displaySomething(viewModel: Coordinate.ViewModel) {
-        //nameTextField.text = viewModel.name
+    // Инициализируем запрос координат границы
+    func getPolyline() {
+        interactor?.getCoordinatsLine()
     }
-    
-    func displayCircle(viewModel: Coordinate.ViewModel) {
-        mapView.addOverlay(viewModel.circle)
+    // Размечаем круг по координатам
+    func displayCircle(viewModel: Coordinate.ViewModel.Element.Circle) {
+        mapView.addOverlay(viewModel.params)
     }
-    
+    // Размечаем линии по координатам
+    func displayLines(viewModel: Coordinate.ViewModel.Element.Lines) {
+        for line in viewModel.params {
+                mapView.addOverlay(line)
+        }
+    }
+    // Добавляем констейнты для карты на экране
     private func addConstraint() {
         self.view.addSubview(self.mapView)
         
@@ -146,10 +107,11 @@ class CoordinateViewController: UIViewController, CoordinateDisplayLogic {
 }
 
 extension CoordinateViewController: MKMapViewDelegate {
+    // Отрисовывем на карте линии
     func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
         if overlay is MKPolyline{
             let renderer = MKPolylineRenderer(overlay: overlay)
-            renderer.strokeColor = UIColor.magenta
+            renderer.strokeColor = color
             renderer.lineWidth = 2.0
 
             return renderer

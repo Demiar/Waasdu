@@ -26,10 +26,32 @@ enum Coordinate{
         var circleRadius: Double?
     }
     struct Response{
+        enum ResponseType {
+            struct Circle {
+                var circleCoordinates: [Double]
+                var circleRadius: Double
+            }
+            
+            struct Coordinats {
+                var params: [[[[Double]]]]
+            }
+        }
         var circleCoordinates: [Double]
         var circleRadius: Double
     }
     struct ViewModel{
-        var circle: MKCircle
+        enum Element {
+            
+            struct Circle {
+                var params: MKCircle
+            }
+            
+            struct Lines {
+                var params: [MKPolyline]
+            }
+            struct Polygons {
+                var myltiPolygon: MKMultiPolygon
+            }
+        }
     }
 }

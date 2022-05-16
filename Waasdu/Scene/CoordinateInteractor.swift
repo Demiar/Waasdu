@@ -15,31 +15,20 @@ import CoreLocation
 import MapKit
 
 protocol CoordinateBusinessLogic {
-    func doSomething(request: Coordinate.Request)
     func getRegion(request: Coordinate.Request.RequestType.GetCircle)
-    
+    func getCoordinatsLine()
 }
 
 protocol CoordinateDataStore {
-    //var name: String { get set }
+    var coordinats: CoordinateModel? { get set }
 }
 
 class CoordinateInteractor: CoordinateBusinessLogic, CoordinateDataStore {
     
     var presenter: CoordinatePresentationLogic?
-    var worker: CoordinateWorker?
-    //var name: String = ""
+    internal var coordinats: CoordinateModel?
 
-    // MARK: Do something
-
-    func doSomething(request: Coordinate.Request) {
-//        worker = CoordinateWorker()
-//        worker?.doSomeWork()
-        
-//        let response = Coordinate.Something.Response()
-//        presenter?.presentSomething(response: response)
-    }
-    
+    // Получаем информацию о регионе по координатам
     func getRegion(request: Coordinate.Request.RequestType.GetCircle) {
         var response: Coordinate.Response = .init(circleCoordinates: [0,0], circleRadius: 0)
         let clLocation = CLLocation(latitude: request.coordinats.latitude, longitude: request.coordinats.longitude)
@@ -66,6 +55,39 @@ class CoordinateInteractor: CoordinateBusinessLogic, CoordinateDataStore {
                 print(error)
             }
         }
-        
+    }
+    
+    // Проверяем, если координаты ещё не загружены, то загружаем
+    func getCoordinatsLine() {
+        if coordinats == nil {
+            loadCoordinats()
+        }
+
+    }
+    
+    // Получили ответ от сайта, передаем координаты для подготовки к отображению
+    func updateData() {
+        guard let coordinats = self.coordinats?.features?[0].geometry?.coordinates else {
+            return
+        }
+
+        let response = Coordinate.Response.ResponseType.Coordinats(params: coordinats)
+        presenter?.presentLines(response: response)
+    }
+    
+    // Обращаемся к сайту для получения координат
+    private func loadCoordinats() {
+        let networkManager = NetworkManager()
+        guard let url = URL(string: "https://waadsu.com/api/russia.geo.json") else { return }
+        networkManager.loadData(url: url) { (result: Result<CoordinateModel,Error>) in
+            switch result {
+            case .success(let success):
+                self.coordinats = success
+                // если успешно то запускаем преобразование координат
+                self.updateData()
+            case .failure(let failure):
+                print(failure)
+            }
+        }
     }
 }
