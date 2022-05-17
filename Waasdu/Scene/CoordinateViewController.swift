@@ -14,8 +14,10 @@ import UIKit
 import MapKit
 
 protocol CoordinateDisplayLogic: AnyObject {
+    
     func displayCircle(viewModel: Coordinate.ViewModel.Element.Circle)
     func displayLines(viewModel: Coordinate.ViewModel.Element.Lines)
+    func updateLabel(viewModel: Coordinate.ViewModel.Element.Distance)
     
 }
 
@@ -23,6 +25,13 @@ class CoordinateViewController: UIViewController, CoordinateDisplayLogic {
     var interactor: CoordinateBusinessLogic?
     var color: UIColor = .red
     let mapView: MKMapView = MKMapView()
+    var label: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.numberOfLines = 1
+        label.text = ""
+        return label
+    }()
 
 
     // MARK: Object lifecycle
@@ -87,6 +96,11 @@ class CoordinateViewController: UIViewController, CoordinateDisplayLogic {
                 mapView.addOverlay(line)
         }
     }
+    
+    func updateLabel(viewModel: Coordinate.ViewModel.Element.Distance) {
+        label.text = viewModel.value
+    }
+    
     // Добавляем констейнты для карты на экране
     private func addConstraint() {
         self.view.addSubview(self.mapView)
@@ -99,7 +113,8 @@ class CoordinateViewController: UIViewController, CoordinateDisplayLogic {
             mapView.rightAnchor.constraint(equalTo: view.rightAnchor),
             mapView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
         ])
-        
+        // Добавляем view Длина границы поверх карты
+        view.addSubview(label)
         
     }
     

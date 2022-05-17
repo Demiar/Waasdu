@@ -70,9 +70,40 @@ class CoordinateInteractor: CoordinateBusinessLogic, CoordinateDataStore {
         guard let coordinats = self.coordinats?.features?[0].geometry?.coordinates else {
             return
         }
-
+        calculateDistance()
         let response = Coordinate.Response.ResponseType.Coordinats(params: coordinats)
         presenter?.presentLines(response: response)
+    }
+    
+    //Считаем расстояние между точками
+    func calculateDistance() {
+        guard let coordinats = coordinats?.features?[0].geometry?.coordinates else {
+            return
+        }
+        
+        var distance: Double = 0.0
+        for coordinatLine in coordinats {
+            var dist: Double = 0.0
+            // Преобразовываем double в координаты
+            let points = coordinatLine[0].map {
+                CLLocation(
+                    latitude: $0[1],
+                    longitude: $0[0]
+                )
+            }
+            // Перебираем массив из точек одной линии
+            for index in 0...points.count {
+                if index - 1 != points.count{
+                    dist += points[0].distance(from: points[1])
+                }
+            }
+            distance += dist
+        }
+        let response = Coordinate.Response.ResponseType.Distance(value: distance)
+        presenter?.presentDistance(response: response)
+        print("Distance = \(distance / 1000)")
+        
+
     }
     
     // Обращаемся к сайту для получения координат

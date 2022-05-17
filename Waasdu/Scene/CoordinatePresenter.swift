@@ -15,6 +15,7 @@ import MapKit
 
 protocol CoordinatePresentationLogic {
     func presentCircle(response: Coordinate.Response)
+    func presentDistance(response: Coordinate.Response.ResponseType.Distance)
     func presentLines(response: Coordinate.Response.ResponseType.Coordinats)
 }
 
@@ -37,25 +38,47 @@ class CoordinatePresenter: CoordinatePresentationLogic {
     func presentLines(response: Coordinate.Response.ResponseType.Coordinats) {
         var result: [MKPolyline] = []
         for res in response.params {
+            //Преобразуем double в координаты
             let coord = res[0].map {
                 CLLocationCoordinate2D(
                     latitude: $0[1],
                     longitude: $0[0])
             }
-
+            // Создаем линию по координатам
             var line = MKPolyline(coordinates: coord, count: coord.count)
+            //Проверяем пересекает ли линия 180 меридиан
             if line.boundingMapRect.spans180thMeridian{
+                //Если да, то пытаемся поправить
                 let re = coord.map{
                     CLLocationCoordinate2D(
                         latitude: $0.latitude,
-                        longitude: $0.longitude > 180 ? 180 : $0.longitude
+                        longitude: calc(number: $0.longitude)
                     )
                 }
                 line = MKPolyline(coordinates: re, count: re.count)
             }
             result.append(line)
         }
+        //Отправляем данные для отображения
         let viewModel = Coordinate.ViewModel.Element.Lines(params: result)
         viewController?.displayLines(viewModel: viewModel)
+    }
+    
+    func presentDistance(response: Coordinate.Response.ResponseType.Distance) {
+        let distance = Int(response.value / 1000)
+        let result = String("Длина: \(distance) км")
+        let viewModel = Coordinate.ViewModel.Element.Distance(value: result)
+        viewController?.updateLabel(viewModel: viewModel)
+    }
+    
+    // Меняем долготу, если она превышает границы
+    private func calc (number: Double) -> Double {
+        if number > 180 {
+            return number - 360
+        } else if number < -180 {
+            return number + 360
+        } else {
+            return number
+        }
     }
 }

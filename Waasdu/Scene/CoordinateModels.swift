@@ -21,6 +21,7 @@ enum Coordinate{
             struct GetCircle {
                 var coordinats: CLLocationCoordinate2D
             }
+            case getLineDistance
         }
         var circleCoordinates: [Double]?
         var circleRadius: Double?
@@ -35,6 +36,10 @@ enum Coordinate{
             struct Coordinats {
                 var params: [[[[Double]]]]
             }
+            
+            struct Distance {
+                var value: Double
+            }
         }
         var circleCoordinates: [Double]
         var circleRadius: Double
@@ -44,6 +49,10 @@ enum Coordinate{
             
             struct Circle {
                 var params: MKCircle
+            }
+            
+            struct Distance {
+                var value: String
             }
             
             struct Lines {
