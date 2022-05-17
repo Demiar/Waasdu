@@ -11,10 +11,12 @@ import Foundation
 class NetworkManager {
     
     func loadData <T: Decodable> (url: URL, parameters: [String: String]? = nil, completion: @escaping (Result<T,Error>) -> Void) {
-        let request = URLRequest(url: url)
-//        request.httpMethod = "POST"
-//        let postString = try? JSONSerialization.data(withJSONObject: parameters ?? [:])
-//        request.httpBody = postString
+        var request = URLRequest(url: url)
+        if parameters != nil {
+            request.httpMethod = "POST"
+            let postString = try? JSONSerialization.data(withJSONObject: parameters ?? [:])
+            request.httpBody = postString
+        }
 
         let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
                 if let error = error {

@@ -40,24 +40,24 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		8A0E36D8283395C600779321 /* Waasdu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = Waasdu.app; path = "/Users/alexey/Documents/Waasdu/build/Debug-iphoneos/Waasdu.app"; sourceTree = "<absolute>"; };
+		8A0E36D9283395C600779321 /* WaasduTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = WaasduTests.xctest; path = "/Users/alexey/Documents/Waasdu/build/Debug-iphoneos/WaasduTests.xctest"; sourceTree = "<absolute>"; };
+		8A0E36DA283395C600779321 /* WaasduUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = WaasduUITests.xctest; path = "/Users/alexey/Documents/Waasdu/build/Debug-iphoneos/WaasduUITests.xctest"; sourceTree = "<absolute>"; };
+		8A0E36DB283395C600779321 /* CoordinateTest.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = CoordinateTest.xctest; path = /Users/alexey/Documents/Waasdu/build/Debug/CoordinateTest.xctest; sourceTree = "<absolute>"; };
 		8A3365922831360C00F3955B /* CoordinateModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoordinateModel.swift; sourceTree = "<group>"; };
 		8A3365942831362000F3955B /* NetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
-		8A48D3612830EC46009F746F /* Waasdu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = Waasdu.app; path = "/Users/alexey/Documents/Waasdu/build/Debug-iphoneos/Waasdu.app"; sourceTree = "<absolute>"; };
 		8A48D3642830EC46009F746F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8A48D3662830EC46009F746F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		8A48D36D2830EC49009F746F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8A48D3702830EC49009F746F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8A48D3722830EC49009F746F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		8A48D3812830EC49009F746F /* WaasduUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = WaasduUITests.xctest; path = "/Users/alexey/Documents/Waasdu/build/Debug-iphoneos/WaasduUITests.xctest"; sourceTree = "<absolute>"; };
 		8A48D3852830EC49009F746F /* WaasduUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaasduUITests.swift; sourceTree = "<group>"; };
 		8A48D3872830EC49009F746F /* WaasduUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaasduUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		8A48D3952830ECAC009F746F /* CoordinatePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatePresenter.swift; sourceTree = "<group>"; };
 		8A48D3982830ECAC009F746F /* CoordinateModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinateModels.swift; sourceTree = "<group>"; };
 		8A48D3992830ECAC009F746F /* CoordinateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinateViewController.swift; sourceTree = "<group>"; };
 		8A48D39A2830ECAC009F746F /* CoordinateInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinateInteractor.swift; sourceTree = "<group>"; };
-		8AE95E19283261530035CCDB /* CoordinateTest.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = CoordinateTest.xctest; path = /Users/alexey/Documents/Waasdu/build/Debug/CoordinateTest.xctest; sourceTree = "<absolute>"; };
 		8AFE5EFB283393FC003D342B /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
-		8AFE5EFC2833944C003D342B /* WaasduTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = WaasduTests.xctest; path = "/Users/alexey/Documents/Waasdu/build/Debug-iphoneos/WaasduTests.xctest"; sourceTree = "<absolute>"; };
 		8AFE5EFD2833944C003D342B /* WassduTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WassduTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -163,7 +163,7 @@
 			);
 			name = Waasdu;
 			productName = Waasdu;
-			productReference = 8A48D3612830EC46009F746F /* Waasdu.app */;
+			productReference = 8A0E36D8283395C600779321 /* Waasdu.app */;
 			productType = "com.apple.product-type.application";
 		};
 		8A48D3762830EC49009F746F /* WaasduTests */ = {
@@ -181,7 +181,7 @@
 			);
 			name = WaasduTests;
 			productName = WaasduTests;
-			productReference = 8AFE5EFC2833944C003D342B /* WaasduTests.xctest */;
+			productReference = 8A0E36D9283395C600779321 /* WaasduTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 		8A48D3802830EC49009F746F /* WaasduUITests */ = {
@@ -199,7 +199,7 @@
 			);
 			name = WaasduUITests;
 			productName = WaasduUITests;
-			productReference = 8A48D3812830EC49009F746F /* WaasduUITests.xctest */;
+			productReference = 8A0E36DA283395C600779321 /* WaasduUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 		8AE95E18283261530035CCDB /* CoordinateTest */ = {
@@ -216,7 +216,7 @@
 			);
 			name = CoordinateTest;
 			productName = CoordinateTest;
-			productReference = 8AE95E19283261530035CCDB /* CoordinateTest.xctest */;
+			productReference = 8A0E36DB283395C600779321 /* CoordinateTest.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */

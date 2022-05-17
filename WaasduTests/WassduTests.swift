@@ -9,13 +9,24 @@ import XCTest
 @testable import Waasdu
 
 class WassduTests: XCTestCase {
+    var sut = NetworkManager()
+
 
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.
     }
 
     override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+        let url = URL(string: "https://waadsu.com/api/russia.geo.json")
+        let promise = expectation(description: "Status code: 200")
+        sut.loadData(url: url!) { (result: Result<Data, Error>) in
+            switch result {
+            case .success(let success):
+                promise.fulfill()
+            case .failure(let failure):
+                XCTFail(failure.localizedDescription)
+            }
+        }
     }
 
     func testExample() throws {
